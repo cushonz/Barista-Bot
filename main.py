@@ -4,55 +4,80 @@ import drink
 
 GPIO.setmode(GPIO.BCM)
 
-orange = 16
-lime = 21
-blue = 19
-strawberry = 20
 
-flavor = [16,19,20,21]
 
 pump_time = 15 #seconds
 
 #Populate Drinks
-# Drink = drink.drink(orange,blue,strawberry,lime);
+# Drink = drink.drink(orange,blue,strawberry,lime)
+
+#Flavor Bank
+#flavor = GPIO
+#------------------
+orange = 16
+lime = 21
+blue = 19
+strawberry = 20
+#------------------
+
+#|Drinks|________________________________
 josh = drink.drink(False,True,True,False)
 zach = drink.drink(True,False,False,False)
+tolby = drink.drink(False,True,False,True)
+#________________________________________
 	
-def all_off():
+def kill_all():	#Turns all pumps to HIGH to turn relays off
+
 	GPIO.output(orange,GPIO.HIGH)
 	GPIO.output(lime,GPIO.HIGH)
 	GPIO.output(blue,GPIO.HIGH)
 	GPIO.output(strawberry,GPIO.HIGH)
 
-def pump_setup(): #sets up GPIO and turns all pumps off
+def pump_init(): #sets up GPIO and turns all pumps off
 
+	#Sets up all pump GPIO
 	GPIO.setup(orange,GPIO.OUT)
 	GPIO.setup(strawberry,GPIO.OUT)
 	GPIO.setup(lime,GPIO.OUT)
 	GPIO.setup(blue,GPIO.OUT)
 
-	all_off()
+	#turns all motors to the off position to ensure syrup doesn't spray everywhere
 
-def make_drink(name):
+	kill_all()
+
+def make_drink(name): # Takes drink object and creates drink
+
 	act_time = int(pump_time/name.flav)	
-	if name.ing['Orange'] == True:
-		GPIO.output(orange,GPIO.LOW)
-	if name.ing['Blue'] == True:
-		GPIO.output(blue,GPIO.LOW)
-	if name.ing['Strawberry'] == True:
-		GPIO.output(strawberry,GPIO.LOW)
-	if name.ing['Lime'] == True:
-		GPIO.output(lime,GPIO.LOW)
-	print(time)
+	for flavor in name.ingredient:  #Loop through dictionary,
+		if name.ingredient[flavor]: #For every flavor
+			GPIO.output(flavor,GPIO.LOW) #set LOW if true
+		else :
+			GPIO.output(flavor,GPIO.HIGH) #otherwise the pump will be set to HIGH
+	
+	#pump for target time
 	time.sleep(act_time)
-	all_off()
+
+	#power off all pumps
+	kill_all()
+
+def make_drink(name,sweeten): # Overloaded version of make_drink, takes int for sweetener pump_time
+
+	act_time = int(sweeten)	
+	for flavor in name.ingredient:  #Loop through dictionary,
+		if name.ingredient[flavor]: #For every flavor
+			GPIO.output(flavor,GPIO.LOW) #set LOW if true
+		else :
+			GPIO.output(flavor,GPIO.HIGH) #otherwise the pump will be set to HIGH
 	
+	#pump for target time
+	time.sleep(sweeten)
+
+	#power off all pumps
+	kill_all()
 	
 		
 		
-		
-pump_setup()		
-make_drink(josh)
-print(val)
-	
+# Testing	
+pump_init()		
+
 	

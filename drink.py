@@ -8,11 +8,15 @@ class drink:
 	
 	def __init__(self, orange,blue,straw,lime):
 	
+	#orange = 16
+	#lime = 21
+	#blue = 19
+	#strawberry = 20
 		self.ing = {
-		'Orange': orange,
-		'Blue': blue,
-		'Strawberry':straw,
-		'Lime':lime,
+		16:orange,
+		19: blue,
+		20:straw,
+		21:lime,
 		}
 		
 		self.flav = 0
