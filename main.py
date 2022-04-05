@@ -1,4 +1,4 @@
-import pump
+from pump import pump
 
 pumps = {
 	"orange" : 16,

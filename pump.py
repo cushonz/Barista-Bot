@@ -3,10 +3,18 @@ import drink
 import RPi.GPIO as GPIO
 
 class pump:
+	private:
+		this = 0
+		
 
 	def kill_all(self):	#Turns all pumps to HIGH to turn relays off
 		for pump in self.pumps:
 			GPIO.output(self.pumps[pump],GPIO.HIGH)
+
+	def __init__(self,pump_time,pfDict): # give a pump duration and a dictionary
+		self.pump_time = pump_time #seconds
+		self.pump_def = pfDict
+		self.pump_init()
 
 	def pump_init(self): #sets up GPIO and turns all pumps off
 		#Sets up all pump GPIO
@@ -15,11 +23,6 @@ class pump:
 			GPIO.setup(self.pumps[pump],GPIO.OUT)
 		#turns all motors to the off position to ensure syrup doesn't spray everywhere
 		self.kill_all()
-
-	def __init__(self,pump_time,pfDict): # give a pump duration and a dictionary
-		self.pump_time = pump_time #seconds
-		self.pump_def = pfDict
-		self.pump_init()
 		
 	def make_drink(self,name): # Takes drink object and creates drink
 
