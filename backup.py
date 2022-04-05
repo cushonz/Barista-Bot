@@ -20,6 +20,13 @@ blue = 19
 strawberry = 20
 #------------------
 
+pumps = {
+	"orange" : 16,
+	"lime" : 21,
+	"blue": 19,
+	"strawberry" : 20,
+}
+
 #|Drinks|________________________________
 josh = drink.drink(False,True,True,False)
 zach = drink.drink(True,False,False,False)
@@ -74,7 +81,20 @@ def make_drink(name,sweeten): # Overloaded version of make_drink, takes int for 
 
 	#power off all pumps
 	kill_all()
-	
+
+def order_drink(flavors):
+	flavs = flavors.split(" ")
+	for vals in pumps:
+		for f in flavs:
+			if f == vals:
+				print("pumping " + f+"...")
+				#GPIO.output(pumps[vals],GPIO.LOW)
+	time.sleep(10)
+			
+		
+		
+
+		
 		
 		
 # Testing	
