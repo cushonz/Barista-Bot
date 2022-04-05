@@ -2,19 +2,17 @@ import time
 import drink
 import RPi.GPIO as GPIO
 
-class pump:
-	private:
-		this = 0
-		
-
-	def kill_all(self):	#Turns all pumps to HIGH to turn relays off
-		for pump in self.pumps:
-			GPIO.output(self.pumps[pump],GPIO.HIGH)
+class pump:	
 
 	def __init__(self,pump_time,pfDict): # give a pump duration and a dictionary
 		self.pump_time = pump_time #seconds
 		self.pump_def = pfDict
 		self.pump_init()
+
+
+	def kill_all(self):	#Turns all pumps to HIGH to turn relays off
+		for pump in self.pumps:
+			GPIO.output(self.pumps[pump],GPIO.HIGH)
 
 	def pump_init(self): #sets up GPIO and turns all pumps off
 		#Sets up all pump GPIO
