@@ -1,4 +1,7 @@
+import RPi.GPIO as GPIO
 from pump import pump
+
+GPIO.setwarnings(False)
 
 pumps = {
 	"orange" : 16,
@@ -8,5 +11,6 @@ pumps = {
 }
 
 pc = pump(15,pumps)
-
-pc.order_drink("strawberry lime")
+pc.pump_init()
+order = input("flavors: ")
+pc.order_drink(order)

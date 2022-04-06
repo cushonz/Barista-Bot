@@ -6,8 +6,7 @@ class pump:
 
 	def __init__(self,pump_time,pfDict): # give a pump duration and a dictionary
 		self.pump_time = pump_time #seconds
-		self.pump_def = pfDict
-		self.pump_init()
+		self.pumps = pfDict
 
 
 	def kill_all(self):	#Turns all pumps to HIGH to turn relays off
