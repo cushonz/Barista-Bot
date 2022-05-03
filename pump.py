@@ -61,3 +61,16 @@ class pump:
 		self.kill_all()
 				
 		
+	def lemonade(self,flavors):
+		flavs = flavors.split(" ")
+		lemon_time = 160
+		calc_time = int(self.pump_time/len(flavs))
+		
+		GPIO.output(16,GPIO.LOW)
+		time.sleep(lemon_time)
+		for vals in self.pumps:
+			for f in flavs:
+				if f == vals:
+					GPIO.output(self.pumps[vals], GPIO.LOW)
+		time.sleep(calc_time)
+		self.kill_all()

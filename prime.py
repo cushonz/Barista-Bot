@@ -1,4 +1,5 @@
 import RPi.GPIO as GPIO
+import time
 
 orange = 16
 lime = 21

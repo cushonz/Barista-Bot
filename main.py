@@ -10,7 +10,7 @@ pumps = {
 	"strawberry" : 20,
 }
 
-pc = pump(15,pumps)
+pc = pump(14,pumps)
 pc.pump_init()
 order = input("flavors: ")
 pc.order_drink(order)
