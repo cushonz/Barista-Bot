@@ -51,10 +51,10 @@ class pump:
 		self.kill_all()
 
 	def order_drink(self,flavors):
-		flavs = flavors.split(" ")
-		calc_time = int(self.pump_time/len(flavs))
+		#flavs = flavors.split(" ")
+		calc_time = int(self.pump_time/len(flavors))
 		for vals in self.pumps:
-			for f in flavs:
+			for f in flavors:
 				if f == vals:
 					GPIO.output(self.pumps[vals],GPIO.LOW)
 		time.sleep(calc_time)
