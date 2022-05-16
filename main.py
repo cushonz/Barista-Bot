@@ -11,7 +11,7 @@ pumps = {
 	"strawberry" : 20,
 }
 
-order = sys.argv[1:];
+order = sys.argv[2:];
 pc = pump(14,pumps)
 pc.pump_init()
 
