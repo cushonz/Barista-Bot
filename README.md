@@ -3,11 +3,11 @@
 This bot was made to fuel my caffiene addiction while also saving some money vs buying from a coffee shop every day.
 
 <p align="center">
-<img width = "960" height = "540" src = "/pictures/machineFront.jpg">
+<img width = "540" height = "960" src = "/pictures/machineFront.jpg">
 </p>
 
 <p align="center">
-<img width = "960" height = "540" src = "/pictures/machineInternal.jpg">
+<img width = "540" height = "960" src = "/pictures/machineInternal.jpg">
 </p>
 
 ## Required Materials
