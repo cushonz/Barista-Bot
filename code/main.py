@@ -5,10 +5,10 @@ from pump import pump
 GPIO.setwarnings(False)
 
 pumps = {
-	"orange" : 16,
-	"lime" : 21,
-	"blue": 19,
-	"strawberry" : 20,
+	"dragon" : 16,
+	"watermelon" : 21,
+	"sour": 19,
+	"apple" : 20,
 }
 
 order = sys.argv[1:];
