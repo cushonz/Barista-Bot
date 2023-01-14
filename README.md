@@ -1,6 +1,8 @@
 # Barista Bot!
 
-This bot was made to fuel my caffiene addiction while also saving some money vs buying from a coffee shop every day.
+This bot was made to fuel my caffiene addiction while also saving some money vs buying from a coffee shop every day. 
+
+This bot was a prototype made on a shoe string budget!
 
 <p align="center">
 <img width = "540" height = "960" src = "/pictures/machineFront.jpg">
